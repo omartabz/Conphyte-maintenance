@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .faq {
+            text-align: left;
+            padding: 50px;
+            font-family: sans-serif;
+            border-radius: 10px;
+            box-shadow: 5px rgba;
+            background-color: #f8f8f8;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 2px solid #0678f1;
+        }
+
+        .faq h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq p {
+            margin-bottom: 20px;
+        }
+
+
+        details {
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px 5px 0 0;
+            list-style: none;
+            position: relative;
+        }
+
+        summary::after {
+            content: "\279C";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        details[open] summary::after {
+            content: "\2795";
+        }
+
+
+        details[open] summary {
+            border-bottom: 1px solid #ddd;
+            border-radius: 5px 5px 0 0;
+        }
+
+        details p {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 0 0 5px 5px;
+            margin: 0;
+        }
+
+        .faq li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <p>Welcome to the <span style="font-weight: bold; font-size: 1.2em;">Conphyte Maintenance</span> Frequently
+            Asked Questions (FAQ) page! We understand that maintaining your property can sometimes raise questions,
+            and we're here to provide clear and helpful answers. This page is designed to address common inquiries about
+            our services,
+            processes, and policies. Whether you're a new client or have been with us for years,
+            we hope this resource will offer valuable insights and quick solutions.</p>
+
+        <details>
+            <summary>What services do you offer?</summary>
+            <p>
+                <li><span style="font-family: sans-serif;font-size: 1.0em;">We provide a range of maintenance services,
+                        including plumbing, electrical, HVAC, landscaping, and general
+                        repairs. We cater to both residential and commercial clients.</span></li>
+            </p>
+        </details>
+
+        <details>
+            <summary>How do I request a service?</summary>
+            <p>
+                <li><span style="font-family:sans-serif;font-size:1.0em;">You can request a service by logging your
+                        issue on
+                        the Conphtye Application and filling out the service request.</span></li>
+            </p>
+        </details>
+
+        <details>
+            <summary>How do i pay for the services?</summary>
+            <p>
+                <li><span style="font-family:sans-serif;font-size:1.0em;">The total service fee is charged to your
+                        residential fee.</span></li>
+            </p>
+        </details>
+
+        <details>
+            <summary>Can I hire my own maintenance outside of the buildings crew?</summary>
+            <p>
+                <li><span style="font-family:sans-serif;font-size:1.0em;">No!!! Strictly no outside people can do
+                        maintenance on our building.</span></li>
+            </p>
+        </details>
+
+    </div>
+</body>
+
+</html>
