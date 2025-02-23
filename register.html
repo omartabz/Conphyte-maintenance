@@ -109,12 +109,112 @@
         </p>
 
         <p id="errorMessage" style="color:red; display:none;">Username already exists, please try another. <a
-                href="/Conphyte-maintenance/signup.html">Go login</a></p>
+                href="./index.html">Go login</a></p>
     </div>
 
-<script>
+    <script>
+        function isNumeric(char) {
+            if (char.length !== 1) {
+
+                return false; // Only check single characters
+            }
+            const code = char.charCodeAt(0);
+            return (
+                (code >= 48 && code <= 57)
+            )
+        }
+        function isUppercase(char) {
+            if (char.length !== 1) {
+
+                return false; // Only check single characters
+            }
+            const code = char.charCodeAt(0);
+            return (
+                (code >= 65 && code <= 90)
+            )
+        }
+        function isLowercase(char) {
+            if (char.length !== 1) {
+                return false;
+            }
+            const code = char.charCodeAt(0)
+            return (
+                (code >= 65 && code <= 90)
+            )
+        }
+        function isSpecialcase(char) {
+            if (char.length !== 1) {
+                return false;
+            }
+            const code = char.charCodeAt(0);
+            return (
+                (code >= 97 && code <= 122)
+            )
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('regUsername').value;
+            const password = document.getElementById('regPassword').value;
+            // const errorMessage = document.getElementById('errorMessage').value
+
+            // Check if the user already has a pr
+            // if (localStorage.getItem(username)) {
+            //     document.getElementById('errorMessage').style.display = 'block';
+            //     document.getElementById('errorMessage').style.display = "Username already exists, please use another one"
+            //     document.getElementById('regMessage').style.display = 'none';
+            // } else {
+            //     // Store new user credentials in localStorage
+            //     localStorage.setItem(username, password);
+            //     document.getElementById('regMessage').style.display = 'block';
+            //     document.getElementById('errorMessage').style.display = 'none'; // Hide error message on success
+            // }
+            // For short passwords
+            if (password.length < 8) {
+                document.getElementById('errorMessage').innerHTML = "Password too short";
+                document.getElementById('errorMessage').style.display = 'block';
+                return
+            }
+            let hasNumeric = false;
+            let hasUppercase = false;
+            let hasLowercase = false;
+            let hasSpecialcase = false;
+            for (let i = 0; i < password.length; i++) {
+                if (isNumeric(password.charAt(i))) {
+                    hasNumeric = true;
+                } else if (isUppercase(password.charAt(i))) {
+                    hasUppercase = true;
+                } else if (isLowercase(password.charAt(i))) {
+                    hasLowercase = true;
+                } else if (isSpecialcase(password.charAt(i))) {
+                    hasSpecialcase = true;
+                }
+            }
+            if (!hasNumeric) {
+                document.getElementById('errorMessage').innerHTML = "Password must contain a number";
+                document.getElementById('errorMessage').style.display = 'block';
+                return
+            }
+            if (!hasUppercase) {
+                document.getElementById('errorMessage').innerHTML = "Password must contain at least one uppercase letter";
+                document.getElementById('errorMessage').style.display = 'block';
+                return
+            }
+            if (!hasLowercase) {
+                document.getElementById('errorMessage').innerHTML = "Password must contain at least one lowercase letter";
+                document.getElementById('errorMessage').style.display = 'block';
+                return
+            }
+            if (!hasSpecialcase){
+                document.getElementById('errorMessage').innerHTML = "Password must contain at least one Special letter";
+                document.getElementById('errorMessage').style.display = 'block';
+                return
+            }
+        });
 
 
-</script>
+    </script>
 </body>
+
 </html>
