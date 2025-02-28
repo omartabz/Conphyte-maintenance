@@ -99,6 +99,10 @@
                 <input type="text" id="regUsername" required>
             </div>
             <div>
+
+                <!-- ##Email validation -->
+
+
                 <label for="password">Password:</label>
                 <input type="password" id="regPassword" required>
             </div>
@@ -139,17 +143,15 @@
             }
             const code = char.charCodeAt(0)
             return (
-                (code >= 65 && code <= 90)
-            )
-        }
-        function isSpecialcase(char) {
-            if (char.length !== 1) {
-                return false;
-            }
-            const code = char.charCodeAt(0);
-            return (
                 (code >= 97 && code <= 122)
             )
+        }
+        function validEmail(email) {
+            let allowed = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (email.match(allowed)) {
+                return true;
+            }
+            return false;
         }
 
         document.getElementById('registerForm').addEventListener('submit', function (e) {
@@ -187,7 +189,7 @@
                     hasUppercase = true;
                 } else if (isLowercase(password.charAt(i))) {
                     hasLowercase = true;
-                } else if (isSpecialcase(password.charAt(i))) {
+                } else {
                     hasSpecialcase = true;
                 }
             }
@@ -206,11 +208,13 @@
                 document.getElementById('errorMessage').style.display = 'block';
                 return
             }
-            if (!hasSpecialcase){
-                document.getElementById('errorMessage').innerHTML = "Password must contain at least one Special letter";
+            if (!hasSpecialcase) {
+                document.getElementById('errorMessage').innerHTML = "Password must contain at least one Special character";
                 document.getElementById('errorMessage').style.display = 'block';
                 return
             }
+            document.getElementById('regMessage').style.display = 'block';
+            document.getElementById('errorMessage').style.display = 'none'; // Hide error message on success
         });
 
 

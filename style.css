@@ -8,10 +8,10 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 90%; /* Adjust width for smaller screens */
     max-width: 960px;
     margin: 20px auto;
-    height: 80%;
+    height: auto; /* Allow height to adjust */
 }
 
 header {
@@ -21,11 +21,13 @@ header {
     display: flex;
     align-items: center; 
     border-radius: 10px 10px 0 0; 
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: space-between; /* Distribute items */
 }
 
 header img {
-    width: 80px;
-    margin-right: 20px;
+    width: 60px; /* Smaller logo on smaller screens */
+    margin-right: 10px;
 }
 
 header button {
@@ -33,7 +35,7 @@ header button {
     color: white;
     border: none;
     padding: 10px 15px;
-    margin-right: 10px;
+    margin: 5px; /* Reduce margin */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s; 
@@ -51,8 +53,7 @@ header button:hover {
     margin-top: 20px; 
     display: flex;
     justify-content: center;
-    justify-items: center;
-    
+    flex-wrap: wrap; /* Allow buttons to wrap */
 }
 
 .card button {
@@ -84,18 +85,33 @@ footer {
     background-color: #333;
     color: white;
 }
-.faq {
-    text-align: left;
-    padding: 50px;
-    font-family: sans-serif;
-    border-radius: 10px;
-    box-shadow: 5px rgba;
-    background-color: #f8f8f8;
-    padding: 30px;
+
+.faq,.para {
+    text-align: justify;
+    padding: 20px; /* Reduced padding */
     margin: 20px auto;
-    max-width: 800px;
-    border: 2px solid #0678f1;
+    max-width: 90%; /* Adjust width */
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid #007bff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+
 }
+ .top {
+        text-align: justify;
+        padding: 20px; /* Reduced padding */
+        margin: 20px auto;
+        max-width: 90%; /* Adjust width */
+        border-radius: 10px;
+        background-color: white;
+        border: 2px solid #007bff;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        justify-content: center;
+        justify-items: center;
+    
+    }
+
 
 .faq h1 {
     color: #007bff;
@@ -106,7 +122,6 @@ footer {
 .faq p {
     margin-bottom: 20px;
 }
-
 
 details {
     margin-bottom: 10px;
@@ -137,7 +152,6 @@ details[open] summary::after {
     content: "\2795";
 }
 
-
 details[open] summary {
     border-bottom: 1px solid #ddd;
     border-radius: 5px 5px 0 0;
@@ -153,29 +167,26 @@ details p {
 .faq li {
     margin-bottom: 5px;
 }
+
 .top {
-    font-size: large;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 10px;
-    background-color: white;
-    border: 2px solid #007bff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em; /* Adjust font size */
+}
+
+.para {
+    font-size: 1.1em; /* Adjust font size */
 }
 
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 10px; /* Reduced gap */
+    padding: 10px; /* Reduced padding */
     justify-items: center;
-    transition: filter 0.3s ease-in-out;
 }
 
 .picture img {
     width: 100%;
-    max-width: 200px;
+    max-width: 150px; /* Smaller images */
     height: auto;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -186,23 +197,11 @@ details p {
 }
 
 @media (max-width: 768px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
+    header {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
     }
-}
-
-@media (max-width: 480px) {
-    .container {
-        grid-template-columns: repeat(1, 1fr);
+    header img {
+        margin-bottom: 10px;
     }
-}
-.para {
-    font-size:large;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 800px;
-    border-radius: 10px;
-    background-color: white;
-    border: 2px solid #007bff;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
