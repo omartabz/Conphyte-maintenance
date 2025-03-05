@@ -98,14 +98,18 @@
                 <label for="username">Username:</label>
                 <input type="text" id="regUsername" required>
             </div>
+
             <div>
+                <label for="email">Email</label>
+                <input type="text" id="regEmail" required>
+            </div>
 
-                <!-- ##Email validation -->
 
-
+            <div>
                 <label for="password">Password:</label>
                 <input type="password" id="regPassword" required>
             </div>
+
             <button type="submit">Register</button>
         </form>
         <p id="regMessage" style="color:green; display:none;">
@@ -159,6 +163,7 @@
 
             const username = document.getElementById('regUsername').value;
             const password = document.getElementById('regPassword').value;
+            const email = document.getElementById('regEmail').value;
             // const errorMessage = document.getElementById('errorMessage').value
 
             // Check if the user already has a pr
@@ -173,6 +178,8 @@
             //     document.getElementById('errorMessage').style.display = 'none'; // Hide error message on success
             // }
             // For short passwords
+
+
             if (password.length < 8) {
                 document.getElementById('errorMessage').innerHTML = "Password too short";
                 document.getElementById('errorMessage').style.display = 'block';
@@ -214,8 +221,13 @@
                 return
             }
             document.getElementById('regMessage').style.display = 'block';
-            document.getElementById('errorMessage').style.display = 'none'; // Hide error message on success
+            document.getElementById('errorMessage').style.display = 'none';
         });
+
+        if (!validEmail) {
+            document.getElementById('errorMessage').innerHTML = 'Please enter a valid email';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
 
 
     </script>
