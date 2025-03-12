@@ -9,7 +9,7 @@ Maintenance Communication Application
 ## Installation and Running
 To **run** the project run the following command:
 ```shell
-node app.js
+node server.js
 ```
 
 ## Credits
