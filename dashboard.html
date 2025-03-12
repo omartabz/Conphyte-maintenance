@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conphyte Maintenance</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="public/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -26,8 +26,33 @@
             <button onclick="changemenu(5)">FAQ</button>
         </div>
     </div>
+
     <div class="dashboard" style="display: none;" id="menu-1">
         <div id="dash">
+            <h2>Dashboard</h2>
+        <form id="dashboard">
+    <label for="notifications">Description:</label>
+    <br>
+    <input type="text" id="notification" required>
+<br>
+<br>
+    <label for="logIssue">Log Issue:</label>
+    <select id="logIssue" required>
+        <option value="">Select an Issue</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Electrical">Electrical</option>
+        <option value="HVAC">HVAC (Heating, Ventilation, Air Conditioning)</option>
+        <option value="Carpentry">Carpentry</option>
+        <option value="General Repair">General Repair</option>
+        <option value="Other">Other</option>
+    </select>
+<br>
+<br>
+    <button type="submit">Submit Issue</button>
+</form>
+<p id="Message" style="display: none;">Issue Logged</p>
+
+
         </div>
         <script src="dashboard.js"></script>
     </div>

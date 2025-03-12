@@ -14,6 +14,21 @@ body {
     height: auto; /* Allow height to adjust */
 }
 
+.dashboard{
+    display: flex;
+        flex-direction: column;
+        width: 300px; /* Adjust width as needed */
+        margin: 20px auto;
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: black;
+        border-color: #007bff;
+}
+
 header {
     background-color: #007bff;
     color: white;

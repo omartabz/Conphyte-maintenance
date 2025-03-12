@@ -164,7 +164,13 @@
             const username = document.getElementById('regUsername').value;
             const password = document.getElementById('regPassword').value;
             const email = document.getElementById('regEmail').value;
-            // const errorMessage = document.getElementById('errorMessage').value
+           
+            if (!validEmail(email)) {
+            document.getElementById('errorMessage').innerHTML = 'Please enter a valid email';
+            document.getElementById('errorMessage').style.display = 'block';
+
+            return 
+        }
 
             // Check if the user already has a pr
             // if (localStorage.getItem(username)) {
@@ -222,12 +228,10 @@
             }
             document.getElementById('regMessage').style.display = 'block';
             document.getElementById('errorMessage').style.display = 'none';
+
         });
 
-        if (!validEmail) {
-            document.getElementById('errorMessage').innerHTML = 'Please enter a valid email';
-            document.getElementById('errorMessage').style.display = 'none';
-        }
+       
 
 
     </script>
