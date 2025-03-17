@@ -1,6 +1,6 @@
 const logTools = document.getElementById("log");
 
-const issueTypes = ["Type of Issue", "Sorted/Not sorted"]; 
+const issueTypes = ["Plumbers on strike : Recent news has shown that plumbers, pipefitters, and welders, often union members, have engaged in strike action over disputes concerning fair compensation, particularly regarding travel allowances. These strikes have disrupted construction projects across various locations, highlighting the tension between workers seeking to maintain their living standards and employers aiming to manage costs.", "Building maintenance has been restored."]; 
 
 if (logTools) {
     for (let i = 0; i < issueTypes.length; i++) {

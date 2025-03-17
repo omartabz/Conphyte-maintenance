@@ -18,6 +18,7 @@ dashboard.addEventListener("submit", function (e) {
     let description = document.getElementById("description");
     if (logIssue.value == "" || description.value == ""){
         alert("Issue Logged Successfully")
+        
         return
 }
 })

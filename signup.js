@@ -44,10 +44,10 @@ if (username.value == "value" || password.value == null){
   }
 });
 // if (isEmpty(firstName)) {
-//     statusBoxErrorMessage(statusMessageBox, "Dear Hacker, please enter your name :)");
+//     statusBoxErrorMessage(statusMessageBox, "Dear User, please enter your name :)");
 //     return;
 // } else if (invalidText(firstName)) {
-//     statusBoxErrorMessage(statusMessageBox, "Dear Hacker, please enter a valid name :)");
+//     statusBoxErrorMessage(statusMessageBox, "Dear User, please enter a valid name :)");
 //     return;
 // }
 
